@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.apporiented</groupId>
     <artifactId>spring-override</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Spring Override</name>
     <description>Namespace handler that allows for overriding, extending or modifying Spring beans in an modular environment.</description>
     <inceptionYear>2011</inceptionYear>
@@ -74,7 +74,7 @@
         <url>https://github.com/lbehnke/spring-override</url>
         <connection>scm:git:git://github.com/lbehnke/spring-override.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/lbehnke/spring-override.git</developerConnection>
-        <tag>v1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <organization>

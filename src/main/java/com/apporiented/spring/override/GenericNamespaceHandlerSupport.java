@@ -17,12 +17,16 @@ import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 /**
  * Namespace handler that collaborates with the {@link com.apporiented.spring.override.GenericBeanDefinitionParser}.
  * @author Felix Gnass [fgnass at neteye dot de]
+ * @author Lars Behnke [lars.behnke at apporiented.com]
  */
 public abstract class GenericNamespaceHandlerSupport extends NamespaceHandlerSupport {
 
 	/**
 	 * Registers a {@link GenericBeanDefinitionParser} for the given elementName
 	 * that creates BeanDefinitions for the specified class.
+     * @param elementName The xml element name.
+     * @param beanClass The bean class.
+     * @return The definition parser.
 	 */
 	protected GenericBeanDefinitionParser register(String elementName, Class<?> beanClass) {
 		GenericBeanDefinitionParser parser = new GenericBeanDefinitionParser(beanClass);
@@ -33,7 +37,10 @@ public abstract class GenericNamespaceHandlerSupport extends NamespaceHandlerSup
 	/**
 	 * Registers a {@link GenericBeanDefinitionParser} for the given elementName.
 	 * The bean class is passed as string to avoid runtime dependencies. If a
-	 * dependency is missing, a warning is logged and the element is ignored. 
+	 * dependency is missing, a warning is logged and the element is ignored.
+     * @param className The class name.
+     * @param elementName The XML element name.
+     * @return The definition parser.
 	 */
 	protected GenericBeanDefinitionParser register(String elementName, 
 			String className) {

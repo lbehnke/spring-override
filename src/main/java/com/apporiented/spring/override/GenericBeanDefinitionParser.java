@@ -29,8 +29,8 @@ import java.util.HashSet;
 
 /**
  * Generic bean definition parser that assumes that all xml element attribute names have corresponding bean property names.
- * See also <a href="http://docs.override.io/override/docs/3.1.x/override-framework-reference/html/extensible-xml.html#extensible-xml-registration>documentation</a>.)
  * @author Carsten Woelk [cwoelk at neteye dot de]
+ * @author Lars Behnke [lars.behnke at apporiented.com]
  */
 public class GenericBeanDefinitionParser extends AbstractGenericBeanDefinitionParser {
 
@@ -119,6 +119,8 @@ public class GenericBeanDefinitionParser extends AbstractGenericBeanDefinitionPa
 	 * except for the "id" and "name" attributes in case of a top-level bean.
 	 * @param attributeName the attribute name taken straight from the
 	 * XML element being parsed (never <code>null</code>)
+     * @param parserContext The parser context.
+     * @return true if eligible.
 	 */
 	protected boolean isEligibleAttribute(String attributeName,
 			ParserContext parserContext) {

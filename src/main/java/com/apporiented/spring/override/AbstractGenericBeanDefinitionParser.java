@@ -36,6 +36,7 @@ import org.w3c.dom.Element;
  *
  * @author Carsten Woelk [cwoelk at neteye dot de]
  * @author Felix Gnass [fgnass at neteye dot de]
+ * @author Lars Behnke [lbehnke at apporiented.com]
  */
 public abstract class AbstractGenericBeanDefinitionParser implements BeanDefinitionParser {
 
@@ -77,6 +78,8 @@ public abstract class AbstractGenericBeanDefinitionParser implements BeanDefinit
 
 	/**
 	 * Sets a decorator that should be used to decorate the BeanDefinition.
+     * @param decorator The decorator
+     * @return This parser instance
 	 */
 	public AbstractGenericBeanDefinitionParser setDecorator(
 			BeanDefinitionDecorator decorator) {
@@ -87,6 +90,8 @@ public abstract class AbstractGenericBeanDefinitionParser implements BeanDefinit
 
 	/**
 	 * Sets the autowire mode. Default is <code>AUTOWIRE_NO</code>.
+     * @param autowireMode
+     * @return This parser instance.
 	 */
 	public AbstractGenericBeanDefinitionParser setAutowireMode(int autowireMode) {
 		this.autowireMode = autowireMode;
@@ -95,6 +100,8 @@ public abstract class AbstractGenericBeanDefinitionParser implements BeanDefinit
 
 	/**
 	 * Sets the name of the factory method. Default is <code>null</code>.
+     * @param factoryMethod The factory method name.
+     * @return This parser instance.
 	 */
 	public AbstractGenericBeanDefinitionParser setFactoryMethod(String factoryMethod) {
 		this.factoryMethod = factoryMethod;
@@ -200,6 +207,10 @@ public abstract class AbstractGenericBeanDefinitionParser implements BeanDefinit
 	 * implementation delegates the call to
 	 * {@link #resolveAlias(org.w3c.dom.Element, org.springframework.beans.factory.support.AbstractBeanDefinition, org.springframework.beans.factory.xml.ParserContext)}
 	 * and tokenizes the returned String.
+     * @param definition The bean definition.
+     * @param element  The XML element.
+     * @param parserContext The parser context.
+     * @return List of bean aliases.
 	 */
 	protected String[] resolveAliases(Element element,
 			AbstractBeanDefinition definition, ParserContext parserContext) {
@@ -212,6 +223,10 @@ public abstract class AbstractGenericBeanDefinitionParser implements BeanDefinit
 	 * Resolve the alias for the supplied {@link org.springframework.beans.factory.config.BeanDefinition}. The returned
 	 * String may contain multiple bean-names separated by commas, semicolons
 	 * or spaces. The default implementation returns <code>null</code>
+     * @param definition The bean definition.
+     * @param element  The XML element.
+     * @param parserContext The parser context.
+     * @return The bean alias.*
 	 */
 	protected String resolveAlias(Element element,
 			AbstractBeanDefinition definition, ParserContext parserContext) {

@@ -17,6 +17,14 @@
             </roles>
         </developer>
         <developer>
+            <id>cwoelk</id>
+            <name>Carsten Woelk</name>
+            <url>https://github.com/cwoelk</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
             <id>lbehnke</id>
             <name>Lars Behnke</name>
             <url>https://github.com/lbehnke</url>

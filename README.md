@@ -22,7 +22,7 @@ Make sure you include the application context files of all your modules. A web p
        <param-value>classpath*:META-INF/spring/application-context-*.xml</param-value>
     </context-param>
 
-Let's assume you have the following configuration in your main project 
+Let's assume you have the following configuration in your main project
 (**application-context-main.xml**):
 
     <beans
@@ -80,4 +80,4 @@ Now a submodule can change application's behavior by providing an configuration 
     
     </beans>
 
-The bean overriding occurs at an very early stage of the Spring initialization. Hence all autowired dependencies to **bean** will see the modifications made by the sub module.
+The bean overriding occurs at a very early stage of the Spring initialization process. Hence, all autowired dependencies to **bean** will see the modifications made by the sub module.

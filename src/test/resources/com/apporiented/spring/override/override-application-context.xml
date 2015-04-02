@@ -1,0 +1,41 @@
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:override="http://www.apporiented.com/schema/spring/override"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.apporiented.com/schema/spring/override
+		http://www.apporiented.com/schema/spring/override.xsd">
+
+    <bean id="bean" class="com.apporiented.spring.override.OverrideTestBean">
+        <property name="string" value="Original" />
+        <property name="list">
+            <list>
+                <value>string1</value>
+                <value>string2</value>
+                <value>string3</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key" value="original" />
+            </map>
+        </property>
+    </bean>
+
+
+    <override:properties ref="bean">
+        <property name="string" value="overridden" />
+    </override:properties>
+
+    <override:add ref="bean" property="list" append="true">
+        <value>string4</value>
+        <value>string5</value>
+    </override:add>
+
+    <override:put ref="bean" property="map">
+        <entry key="key" value="overridden" />
+    </override:put>
+
+</beans>

@@ -4,8 +4,7 @@ Spring Override
 This library provides an XML namespace handler that allows for overriding, extending or modifying beans in an modular [Spring](http://projects.spring.io/spring-framework/) environment.
 The code was originally written by [Felix Gnass](https://github.com/fgnass) back in 2007 as part of the [riot content management system](https://github.com/riotfamily/riot). So all credits go to him.
 
-As Pivotal has [abandoned](https://eclipse.org/gemini/) the Spring DM project I figured that riot's pragmatic *override* feature is still valuable for many developers who try to modularize their Spring projects. So I decoupled the feature and moved it into its own project.  
-Although this library comes with a Spring 4.1 dependency, it should also work with older version.
+As Pivotal has [abandoned](https://eclipse.org/gemini/) the Spring DM project I figured that riot's pragmatic *override* feature is still valuable for many developers who try to modularize their Spring projects. So I decoupled the feature and moved it into its own project. Although this library comes with a Spring 4.1 dependency, it should also work with older version.
 Here is a very simple example how to use it:
 
 If you are using Maven, include the dependency into your pom.xml
@@ -23,7 +22,8 @@ Make sure you include the application context files of all your modules. A web p
        <param-value>classpath*:META-INF/spring/application-context-*.xml</param-value>
     </context-param>
 
-Let's assume you have the following configuration in your main project (**application-context-main.xml**):
+Let's assume you have the following configuration in your main project 
+(**application-context-main.xml**):
 
     <beans
             xmlns="http://www.springframework.org/schema/beans"
@@ -52,7 +52,8 @@ Let's assume you have the following configuration in your main project (**applic
         </bean>
     </beans>
      
-Now a submodule can change application's behavior by providing this configuraiton (**application-context-sub.xml**)   
+Now a submodule can change application's behavior by providing an configuration such as
+(**application-context-sub.xml**)   
     
     <beans
             xmlns="http://www.springframework.org/schema/beans"
@@ -79,4 +80,4 @@ Now a submodule can change application's behavior by providing this configuraito
     
     </beans>
 
-
+The bean overriding occurs at an very early stage of the Spring initialization. Hence all autowired dependencies to **bean** will see the modifications made by the sub module.

@@ -1,7 +1,7 @@
 Spring Override
 ===============
 
-This library provides an XML namespace handler that allows for overriding, extending or modifying beans in an modular [Spring](http://projects.spring.io/spring-framework/) environment.
+This library provides an XML namespace handler that allows for overriding, extending or modifying beans in a modular [Spring](http://projects.spring.io/spring-framework/) environment.
 The code was originally written by [Felix Gnass](https://github.com/fgnass) and  [Carsten Woelk](https://github.com/cwoelk) back in 2007 as part of the [riot content management system](https://github.com/riotfamily/riot). So all credits go to them.
 
 As Pivotal has [abandoned](https://eclipse.org/gemini/) the Spring DM project I figured that riot's pragmatic *override* feature is still valuable to many developers who try to modularize their Spring projects. So I decoupled the feature and moved it into its own project. Although this library comes with a Spring 4.1 dependency, it should also work with older version.

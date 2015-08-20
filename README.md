@@ -52,7 +52,7 @@ Let's assume you have the following configuration in your main project
         </bean>
     </beans>
      
-Now a submodule can change application's behavior by providing an configuration such as
+Now a submodule can change application's behavior by providing a configuration such as
 (**application-context-sub.xml**)   
     
     <beans
